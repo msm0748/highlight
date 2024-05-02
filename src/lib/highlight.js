@@ -72,6 +72,7 @@ export function getSelectedTextInfo() {
 /**
  * 선택된 텍스트가 포함된 블록 요소의 인덱스를 가져오는 함수
  * @param {textContainer} textContainer 노드 객체
+ * @returns {number} 블록 요소의 인덱스
  */
 export function findBlockIndex(textContainer) {
 	const range = getSelection();
@@ -88,6 +89,7 @@ export function findBlockIndex(textContainer) {
 
 /**
  * 선택된 텍스트의 전체 시작 오프셋과 끝 오프셋을 계산하는 함수
+ * @returns {Object|null} 시작 오프셋과 끝 오프셋 정보를 포함하는 객체 또는 null
  */
 export function calculateRelativeOffsets() {
 	const range = getSelection();
@@ -105,6 +107,7 @@ export function calculateRelativeOffsets() {
 
 /**
  * 현재 선택된 범위의 위치와 크기를 계산하여 selectionRect 객체를 업데이트하는 함수
+ * @return {Object} selectionRect 위치와 크기 정보를 저장하는 객체
  */
 export function getSelectionRect() {
 	const range = getSelection();

@@ -1,12 +1,15 @@
 <script>
 	export let position;
+	export let textInfo;
 
 	console.log(position);
 </script>
 
 <div class="popup-bubble-option" style="top: {position.y - 135}px; left: {position.x}px">
 	<button class="popup-bubble-button">highlight</button>
-	<a class="popup-bubble-button" href="/test" target="_blank">Google Search</a>
+	<a class="popup-bubble-button" href="https://www.google.com/search?q={textInfo}" target="_blank"
+		>Google Search</a
+	>
 </div>
 
 <style lang="scss">

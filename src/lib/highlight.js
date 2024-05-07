@@ -78,7 +78,7 @@ export function findBlockIndex(textContainer) {
 	const range = getSelection();
 	if (isValidSelection(range)) {
 		const commonAncestor = getCommonAncestor(range);
-		const blocks = textContainer.querySelectorAll('p, h1, h2, h3, li, img');
+		const blocks = textContainer.querySelectorAll('p, h1, h2, h3, h4, li');
 		for (let i = 0; i < blocks.length; i++) {
 			if (blocks[i] === commonAncestor || blocks[i].contains(commonAncestor)) {
 				return i;

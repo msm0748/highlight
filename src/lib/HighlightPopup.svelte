@@ -2,7 +2,7 @@
 	export let position;
 	export let textInfo;
 
-	console.log(position);
+	console.log(textInfo);
 </script>
 
 <div class="popup-bubble-option" style="top: {position.y - 135}px; left: {position.x}px">

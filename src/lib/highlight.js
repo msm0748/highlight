@@ -118,9 +118,12 @@ export const getSelectionRect = () => {
 	const range = getSelection();
 	if (range) {
 		const rect = range.getBoundingClientRect();
+		var scrollTop = document.documentElement.scrollTop;
+		var absoluteTop = rect.top + scrollTop;
+
 		return {
 			x: rect.left,
-			y: rect.top,
+			y: absoluteTop,
 			width: rect.width,
 			height: rect.height
 		};

@@ -153,6 +153,70 @@
 		</p>
 		<p>안녀이하세요</p>
 		<p>ㅇㅇㄹㄴㅇㄹ</p>
+		<p>
+			Failure to thrive can be regarded as a descriptive umbrella for infants or toddlers who have
+			difficulty in establishing regular feeding patterns and do not gain the expected weight.<br
+			/>Failure to thrivecan be regarded as a descriptive umbrella term which refers to
+			inadequategrowth due to a nutritional deficiency. Failure to thrive is often used inclinical
+			practice to mean that the current weight or rate of weight gain of achild are significantly
+			below that expected of similar children of the same sexand age. There is no definite accepted
+			measure to diagnose the condition; mostpractitioners diagnose failure to thrive when a child’s
+			weight for age fallsbelow the fifth centile of the standard growth chart (see Appendix
+			B.2.1).Although failure to thrive was once classified into organic and nonorganic, itis now
+			seen to be the result of the interaction between the environment and thechild’s health,
+			development and behaviour (Gahagan, 2006). Successful feedingis necessary not only for
+			physical survival but is also tied in with theinfant’s general development.
+		</p>
+		<p>안녀이하세요</p>
+		<p>ㅇㅇㄹㄴㅇㄹ</p>
+		<p>
+			Failure to thrive can be regarded as a descriptive umbrella for infants or toddlers who have
+			difficulty in establishing regular feeding patterns and do not gain the expected weight.<br
+			/>Failure to thrivecan be regarded as a descriptive umbrella term which refers to
+			inadequategrowth due to a nutritional deficiency. Failure to thrive is often used inclinical
+			practice to mean that the current weight or rate of weight gain of achild are significantly
+			below that expected of similar children of the same sexand age. There is no definite accepted
+			measure to diagnose the condition; mostpractitioners diagnose failure to thrive when a child’s
+			weight for age fallsbelow the fifth centile of the standard growth chart (see Appendix
+			B.2.1).Although failure to thrive was once classified into organic and nonorganic, itis now
+			seen to be the result of the interaction between the environment and thechild’s health,
+			development and behaviour (Gahagan, 2006). Successful feedingis necessary not only for
+			physical survival but is also tied in with theinfant’s general development.
+		</p>
+		<p>안녀이하세요</p>
+		<p>ㅇㅇㄹㄴㅇㄹ</p>
+		<p>
+			Failure to thrive can be regarded as a descriptive umbrella for infants or toddlers who have
+			difficulty in establishing regular feeding patterns and do not gain the expected weight.<br
+			/>Failure to thrivecan be regarded as a descriptive umbrella term which refers to
+			inadequategrowth due to a nutritional deficiency. Failure to thrive is often used inclinical
+			practice to mean that the current weight or rate of weight gain of achild are significantly
+			below that expected of similar children of the same sexand age. There is no definite accepted
+			measure to diagnose the condition; mostpractitioners diagnose failure to thrive when a child’s
+			weight for age fallsbelow the fifth centile of the standard growth chart (see Appendix
+			B.2.1).Although failure to thrive was once classified into organic and nonorganic, itis now
+			seen to be the result of the interaction between the environment and thechild’s health,
+			development and behaviour (Gahagan, 2006). Successful feedingis necessary not only for
+			physical survival but is also tied in with theinfant’s general development.
+		</p>
+		<p>안녀이하세요</p>
+		<p>ㅇㅇㄹㄴㅇㄹ</p>
+		<p>
+			Failure to thrive can be regarded as a descriptive umbrella for infants or toddlers who have
+			difficulty in establishing regular feeding patterns and do not gain the expected weight.<br
+			/>Failure to thrivecan be regarded as a descriptive umbrella term which refers to
+			inadequategrowth due to a nutritional deficiency. Failure to thrive is often used inclinical
+			practice to mean that the current weight or rate of weight gain of achild are significantly
+			below that expected of similar children of the same sexand age. There is no definite accepted
+			measure to diagnose the condition; mostpractitioners diagnose failure to thrive when a child’s
+			weight for age fallsbelow the fifth centile of the standard growth chart (see Appendix
+			B.2.1).Although failure to thrive was once classified into organic and nonorganic, itis now
+			seen to be the result of the interaction between the environment and thechild’s health,
+			development and behaviour (Gahagan, 2006). Successful feedingis necessary not only for
+			physical survival but is also tied in with theinfant’s general development.
+		</p>
+		<p>안녀이하세요</p>
+		<p>ㅇㅇㄹㄴㅇㄹ</p>
 	</div>
 
 	<HighlightPopup position={selectionRect} {textInfo} {onSubmit} bind:isShow={isShowPopup} />

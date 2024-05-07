@@ -4,7 +4,8 @@
 		calculateRelativeOffsets,
 		getSelectionRect,
 		findBlockIndex,
-		getSelectedTextInfo
+		getSelectedTextInfo,
+		getBlocks
 	} from '$lib/highlight';
 	import mark from 'mark.js/dist/mark';
 	import { onMount } from 'svelte';
@@ -13,38 +14,37 @@
 	let markedText = [];
 	let textContainer;
 	let selectionRect = null;
+	let isShowPopup = false;
 
 	let textInfo = null;
 	let submitData = null;
-
 	let markInstance;
-
 	let textContent;
+
+	onMount(() => {
+		textContent = getBlocks(textContainer);
+	});
 
 	const handleMouseUp = () => {
 		const textCalculateRelativeOffsets = calculateRelativeOffsets();
 
 		const blockIndex = findBlockIndex(textContainer);
 
-		submitData = {
-			block_position: blockIndex,
-			...textCalculateRelativeOffsets
-		};
-
-		// {block_position: 1, startOffset: 1,  endOffset: 4}
-		// console.log(submitData);
-
 		textInfo = getSelectedTextInfo();
+
+		if (blockIndex) {
+			submitData = {
+				block: blockIndex,
+				...textCalculateRelativeOffsets,
+				text: textInfo
+			};
+		}
 	};
 
 	const submit = () => {
 		markedText = [...markedText, submitData];
-		console.log(markedText);
+		isShowPopup = false;
 	};
-
-	onMount(() => {
-		textContent = textContainer.querySelectorAll('p, h1, h2, h3, h4, li');
-	});
 
 	$: if (markedText.length > 0) {
 		if (markInstance) {
@@ -60,16 +60,25 @@
 		};
 
 		markedText.forEach((item) => {
-			markInstance = new mark(textContent[item.block_position]);
-			markInstance.markRanges(
-				[{ start: item.startOffset, length: item.endOffset - item.startOffset }],
-				options
-			);
+			markInstance = new mark(textContent[item.block]);
+			markInstance.markRanges([{ start: item.start, length: item.end - item.start }], options);
 		});
 	}
 
+	const handleMouseDown = (e) => {
+		if (e.button !== 2) {
+			selectionRect = null;
+			submitData = null;
+		}
+	};
+
 	const handleContextMenu = () => {
 		selectionRect = getSelectionRect();
+		if (selectionRect && submitData) {
+			isShowPopup = true;
+		} else {
+			isShowPopup = false;
+		}
 	};
 </script>
 
@@ -80,7 +89,7 @@
 		bind:this={textContainer}
 		on:mouseup={handleMouseUp}
 		on:contextmenu|preventDefault={handleContextMenu}
-		on:mousedown={() => (selectionRect = null)}
+		on:mousedown={handleMouseDown}
 	>
 		<!-- {@html content} -->
 		<h1>sdafasdfsadfsadf</h1>
@@ -146,9 +155,7 @@
 		<p>ㅇㅇㄹㄴㅇㄹ</p>
 	</div>
 
-	{#if selectionRect}
-		<HighlightPopup position={selectionRect} {textInfo} {submit} />
-	{/if}
+	<HighlightPopup position={selectionRect} {textInfo} {submit} bind:isShow={isShowPopup} />
 </div>
 
 <style lang="scss">

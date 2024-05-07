@@ -69,6 +69,10 @@ export function getSelectedTextInfo() {
 	return null;
 }
 
+export const getBlocks = (textContainer) => {
+	return textContainer.querySelectorAll('p, h1, h2, h3, h4, li');
+};
+
 /**
  * 선택된 텍스트가 포함된 블록 요소의 인덱스를 가져오는 함수
  * @param {textContainer} textContainer 노드 객체
@@ -78,7 +82,7 @@ export function findBlockIndex(textContainer) {
 	const range = getSelection();
 	if (isValidSelection(range)) {
 		const commonAncestor = getCommonAncestor(range);
-		const blocks = textContainer.querySelectorAll('p, h1, h2, h3, h4, li');
+		const blocks = getBlocks(textContainer);
 		for (let i = 0; i < blocks.length; i++) {
 			if (blocks[i] === commonAncestor || blocks[i].contains(commonAncestor)) {
 				return i;
@@ -95,12 +99,12 @@ export function calculateRelativeOffsets() {
 	const range = getSelection();
 	if (isValidSelection(range)) {
 		const commonAncestor = getCommonAncestor(range);
-		const startOffset = getGlobalOffset(commonAncestor, range.startContainer) + range.startOffset;
-		const endOffset = getGlobalOffset(commonAncestor, range.endContainer) + range.endOffset;
+		const start = getGlobalOffset(commonAncestor, range.startContainer) + range.startOffset;
+		const end = getGlobalOffset(commonAncestor, range.endContainer) + range.endOffset;
 
 		return {
-			startOffset,
-			endOffset
+			start,
+			end
 		};
 	}
 }

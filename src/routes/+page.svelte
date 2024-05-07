@@ -10,8 +10,7 @@
 	import mark from 'mark.js/dist/mark';
 	import { onMount } from 'svelte';
 
-	// [{block_position: 1, startOffset: 1,  endOffset: 4}, {block_position: 4, startOffset: 1,  endOffset: 4}]
-	let markedText = [];
+	let highlightList = [];
 	let textContainer;
 	let selectionRect = null;
 	let isShowPopup = false;
@@ -19,10 +18,10 @@
 	let textInfo = null;
 	let submitData = null;
 	let markInstance;
-	let textContent;
+	let contentBlocks;
 
 	onMount(() => {
-		textContent = getBlocks(textContainer);
+		contentBlocks = getBlocks(textContainer);
 	});
 
 	const handleMouseUp = () => {
@@ -41,12 +40,12 @@
 		}
 	};
 
-	const submit = () => {
-		markedText = [...markedText, submitData];
+	const onSubmit = () => {
+		highlightList = [...highlightList, submitData];
 		isShowPopup = false;
 	};
 
-	$: if (markedText.length > 0) {
+	$: if (highlightList.length > 0) {
 		if (markInstance) {
 			markInstance.unmark();
 		}
@@ -59,8 +58,8 @@
 			className: 'highlight'
 		};
 
-		markedText.forEach((item) => {
-			markInstance = new mark(textContent[item.block]);
+		highlightList.forEach((item) => {
+			markInstance = new mark(contentBlocks[item.block]);
 			markInstance.markRanges([{ start: item.start, length: item.end - item.start }], options);
 		});
 	}
@@ -69,6 +68,7 @@
 		if (e.button !== 2) {
 			selectionRect = null;
 			submitData = null;
+			isShowPopup = false;
 		}
 	};
 
@@ -155,7 +155,7 @@
 		<p>ㅇㅇㄹㄴㅇㄹ</p>
 	</div>
 
-	<HighlightPopup position={selectionRect} {textInfo} {submit} bind:isShow={isShowPopup} />
+	<HighlightPopup position={selectionRect} {textInfo} {onSubmit} bind:isShow={isShowPopup} />
 </div>
 
 <style lang="scss">

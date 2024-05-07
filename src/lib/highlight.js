@@ -62,6 +62,7 @@ function isTextOrElement(node) {
  */
 export function getSelectedTextInfo() {
 	const selection = window.getSelection();
+
 	if (selection && selection.toString().length > 0) {
 		const selectedText = selection.toString();
 		return selectedText;
